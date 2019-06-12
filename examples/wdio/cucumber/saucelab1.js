@@ -25,10 +25,10 @@ import { remote } from '../../packages/webdriverio/build'
     await browser.url('https://github.com')
 
     const searchInput = await browser.$('.ds-input')
-    await searchInput.addValue('click')
+    await searchInput.verifySelectorText('.header-logo-invertocat')
 
     const resultLabel = await browser.$('.header-logo-invertocat')
-    await resultLabel.click()
+    await resultLabel.verifySelectorText()
 
     await browser.pause(1000)
 
