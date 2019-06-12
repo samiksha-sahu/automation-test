@@ -22,19 +22,19 @@ import { remote } from '../../packages/webdriverio/build'
         logLevel: 'trace'
     })
 
-    await browser.url('https://webdriver.io')
+    await browser.url('https://github.com')
 
     const searchInput = await browser.$('.ds-input')
     await searchInput.addValue('click')
 
-    const resultLabel = await browser.$('.algolia-docsearch-suggestion--title')
+    const resultLabel = await browser.$('.header-logo-invertocat')
     await resultLabel.click()
 
     await browser.pause(1000)
 
     const title = await browser.getTitle()
     // eslint-disable-next-line
-    console.log(title) // returns "should return "WebdriverIO - click""
+    console.log(title) // returns "The world's leading software development platform · GitHub""
 
     await browser.deleteSession()
 })()
